@@ -50,13 +50,20 @@
   /* Hide the link that should open and close the topnav on small screens */
   .topnav .icon {
     display: none;
-  } 
+  }
+  
+  .feed {
+    height: 500px; 
+  }
   
   @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
       display: block;
+    }
+    .highlight {
+      left: 8px !important;
     }
   }
   

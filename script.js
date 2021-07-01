@@ -6,3 +6,10 @@ function myFunction() {
       x.className = "topnav";
     }
   } 
+
+function escondeMenu(e) {
+    console.log(this)
+    console.log("teste");
+}
+
+document.addEventListener("click", escondeMenu)
