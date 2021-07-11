@@ -67,7 +67,7 @@
   }
   
   .nbarra {
-    height: 500px; 
+    height: 800px; 
   }
   
   .nbarra a { 
@@ -97,7 +97,7 @@
       display: block;
     }
     .links {
-      top: 650px;
+      top: 700px;
       left: 0;
       width: 100%;
       justify-content: space-evenly;
