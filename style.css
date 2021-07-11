@@ -31,7 +31,7 @@
   }
   
   #seta {
-    position: fixed;
+    position: absolute;
     right: 65px;
     font-size: 10px;
     top: 20px;
@@ -40,7 +40,7 @@
   }
 
   #lan {
-    position:fixed;
+    position:absolute;
     right: 80px;
     font-size: 15px;
     top: 15px;
@@ -48,8 +48,18 @@
 
   #c {display:block;}
   #prime {
-    position:absolute; top: 45px; z-index: -1;
+    display:flex;
+    position:absolute; top: 80px; z-index: -1;
+    width: 98%;
+    background-color: inherit;
+    border:solid 1px #999999;
+    border-radius: 4px;
+    padding: 3% 0 3%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
   }
+  #text {margin-left: 5%;text-align:left;line-height: 1.4;width: 50%;}
   
   /* Hide the link that should open and close the topnav on small screens */
   .topnav .icon {
@@ -64,6 +74,19 @@
     color:#bdc1c6;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
+    display: inline-block;
+  }
+  
+  .links {
+    display:flex;
+    position: absolute;
+    top: 400px;
+    left: 42%;
+    background-color: black; 
+    width:15%;
+    justify-content: space-evenly;
+    padding-top: 3px; 
+  
   }
 
   @media screen and (max-width: 600px) {
@@ -73,10 +96,17 @@
       float: right;
       display: block;
     }
+    .links {
+      top: 700px;
+      left: 0;
+      width: 100%;
+      justify-content: space-evenly;
+    }
     #highlight {left: 8px !important;}
     #a {display: none;}
     #c {display: none;}
-
+    #prime {display: block; width:95%;}
+    #text {width:90%;}
   }
   
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
