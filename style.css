@@ -16,9 +16,7 @@
     font-family: 'Noto Sans JP', sans-serif;
     transition: color 0.5s;
   }
-  .topnav a:hover {
-    color: #ffffff
-  }
+  .topnav a:hover {color: #ffffff}
   /* Add an active class to highlight the current page */
 
   #highlight {
@@ -49,7 +47,7 @@
   #c {display:block;}
   #prime {
     display:flex;
-    position:absolute; top: 80px; z-index: -1;
+    position:relative; top:20px;
     width: 98%;
     background-color: inherit;
     border:solid 1px #999999;
@@ -58,25 +56,31 @@
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: center;
+    
   }
   #text {margin-left: 5%;text-align:left;line-height: 1.4;width: 50%;}
-  
+  #sci {position: absolute; top:300px;}
+  #tinker {width: 50%;margin: 2% auto 0 auto;}
+  #bsp4 {display: inline;position: relative;bottom:130px;margin-left:20%;font-family:'Courier New', Courier, monospace;}
+  .overview {font-family:Cambria;display: inline-block;position: relative;bottom:25px;margin-left: 10%;}
+  #med {position: relative; top:100px;}
+  #uno {margin-left: 30%;position: relative; bottom: 5%;}
+  .pg {background-color: white; height: 1100px;width:80%;margin:auto;box-shadow:0 0 2em #181616;color:black;}
   /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
-    display: none;
-  }
+  .topnav .icon {display: none;}
   
-  .nbarra {
-    height: 800px; 
-  }
+  .nbarra {height: 800px; margin-top: 10px;}
   
   .nbarra a { 
     color:#bdc1c6;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
-    display: inline-block;
+    text-decoration: none;
   }
   
+  .nbarra a:hover {
+    text-decoration: underline;
+  }
   .links {
     display:flex;
     position: absolute;
@@ -86,11 +90,21 @@
     width:15%;
     justify-content: space-evenly;
     padding-top: 3px; 
-  
   }
 
+  .caixa {
+    align-content: stretch; 
+    z-index: 2;
+  }
+
+  .textod {margin: 10px 10%;}
+
+  h4 {align-self: flex-start;}
+  td {text-align: center;padding-left:1em;padding-right: 1em;}
+  th {border-bottom: black 1px solid; }
+  table {font-size: 15px;font-family:Cambria;border-top: black 1px solid;border-bottom: black 1px solid;margin: auto;position: relative;bottom:20px;}
+
   @media screen and (max-width: 600px) {
-    .nbarra a {display:block;}
 
     .topnav .icon {
       float: right;
@@ -102,16 +116,30 @@
       width: 100%;
       justify-content: space-evenly;
     }
+
     #highlight {left: 8px !important;}
     #a {display: none;}
     #c {display: none;}
-    #prime {display: block; width:95%;}
+    #prime {display: block; width:100%;}
     #text {width:90%;}
+    #tinker {width: 100%;}
+    #bsp4 {color:black;display: inline;position: relative;font-size: 10px;bottom:3%;margin-left: 8%;}
+    .overview {bottom:1%;font-size: 7px;}
+    #uno {margin-left: 12%; position: relative; bottom: 3%;}
+    #pnagem {position: relative;top:75px;font-size: 7px;}
+    #med {position: relative; top:160px;}
+    .pg {height: 380px;}
+    #pg2 {height:440px}
+    .caixa {display: flex !important;}
+    .nbarra {z-index: 1;position: absolute;top:50px;width: 95%;}
+
+    table {font-size: 9px;bottom:0;}
+    td {padding: 0 0 0 0;}
   }
   
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
   @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
+    .topnav.responsive {position: relative;z-index: 2;}
     .topnav.responsive a.icon {
       position: absolute;
       right: 0;

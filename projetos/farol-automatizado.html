@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Luís F. Miki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet"> 
+</head>
+
+  <body style="background-color: #4b4848;">
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html" id="d">Atividades</a>
+        <a href="../sobre.html" id="c">Sobre</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a class="icon"><div id="lan">pt</div><div id="seta">&#9660;</div></a> 
+    </div>
+      <div id="highlight">&nbsp;</div>
+      <div class="nbarra" onclick="escondeMenu()">
+        <div id="prime" style="flex-direction: column;">
+            <h2 style="margin: 10px 10%;">Farol Automatizado com Arduino</h2>
+            <hr style="color:rgb(214, 214, 214); width:80%;">
+            <p class="textod">Esta é a pagina do projeto de simulação de um protótipo para a automação dos acionamentos dos faróis de um carro
+            desenvolvido para a disciplina de Introdução ao Projeto de Engenharia - EEE021 na UFMG (2021) com o intuito de praticar a gestão
+            de projetos beasado na metodologia PMBOK.
+            <br><br>O projeto foi desenvolvido pelos alunos:<br>
+            </p>
+            <ul class="textod">
+                <li>Luís Miki</li>
+                <li>João Pedro Lima Pirajá</li>
+                <li>André Muniz</li>
+                <li>Filipe Boldini</li>
+                <li>Igor Henrique</li>
+                <li>Carlos Eduardo Araújo</li>
+            </ul>
+            <img id="tinker" src="../img/tinker.png" alt="TinkerCAD Hardware">
+            <p class="textod">A imagem acima é o resultado da parte de hardware do protótipo simulada na plataforma <i>Tinkercad</i>
+            de forma que, devido à impossibilidade de se trabalhar presencialmente e utilizar os espaços e recursos da universidade,
+            não foi prosseguido a implementação em um automóvel real.<br> O video a seguir mostra em detalhes as funcionalidades e aplicações do modelo:
+            </p>
+
+            <hr style="color:lightslategrey; width:80%;">
+            <p class="textod"><b>Folha de Especifações do Protótipo</b></p>
+            <div class="pg">
+                <img src="../img/ufmg-logo-1-1.png" alt="logoUFMG" style="width:25%; margin: 10% 10% 5%;">
+                <h2 id="bsp4">BSP4 FSE 2021 v0.1</h2>
+                <div class="overview">
+                <h3><b>1  &nbsp;Visão Geral</b></h3>
+                <ul style="padding-left: 20%;">
+                    <li>1 sinal de entrada analógica</li>
+                    <li>5 sinais de entrada digital</li>
+                    <li>Auto-desligamento</li>
+                    <li>2 saídas digitais</li>
+                </ul>
+                </div>
+                <img id="uno" src="../img/arduino-uno.png" alt="Arduino" style="width:30%;">
+                <h3 class="overview"><b>2  &nbsp;Especifações Técnicas</b></h3>
+                <table>
+                    <tr><th></th><th>Unidade</th><th>Valor</th></tr>
+                    <tr><td style="text-align: left;">Tensão de Alimentação</td><td><i>V</i></td><td>7~12</td></tr>
+                    <tr><td style="text-align: left;">Dimensões</td><td><i>mm*mm*mm</i></td><td>69*54*21  </td></tr>
+                    <tr><td style="text-align: left;">Peso</td><td><i>g</i></td><td>45</td></tr>
+                    <tr><td style="text-align: left;">nº de entradas</td><td>--</td><td>6</td></tr>
+                    <tr><td style="text-align: left;"">Tensão de Operação</td><td><i>V</i></td><td>0~5</td></tr>
+                    <tr><td style="text-align: left;"">Intervalo de Temperatura</td><td><i>C</i></td><td>-20~60</td></tr>
+                </table>
+                <br>
+                <h3 class="overview">3  &nbsp;Pinagem</h3>
+                <table id="pnagem">
+                    <tr><th>Pino</th><th>Sinal</th></tr>
+                    <tr><td>2</td><td>D1_LED (Sinaleira do farol alto)</td></tr>
+                    <tr><td>3</td><td>D2_LED (Sistema ativo/inativo)</td></tr>
+                    <tr><td>4</td><td>D3_IN (Sinaleira do farol baixo)</td></tr>
+                    <tr><td>5</td><td>D2_IN (Sistema ativo/inativo)</td></tr>
+                    <tr><td>6</td><td>D1_IN (Sinaleira do farol alto)</td></tr>
+                    <tr><td>7</td><td>D1_OUT (Farol Alto)</td></tr>
+                    <tr><td>8</td><td>D3_OUT (Farol Baixo)</td></tr>
+                    <tr><td>9</td><td>D4 (Relógio do carro)</td></tr>
+                    <tr><td>11 e 12</td><td>D5 e D6 (Sensor de distância)</td></tr>
+                    <tr><td>A0</td><td>A0_SENS (Sensor de Luminosidade)</td></tr>
+                </table>
+            </div><hr>
+            <div class="pg" id="pg2">
+              <div id="med"> 
+              <h3 class="overview">4  &nbsp;Medidas</h3>
+              <img style="display:block;width:40%;margin: auto;" src="../img/mod.png">
+              <img style="display:block;width:70%;margin: 5% auto;" src="../img/EEE021.png">
+              </div>
+            </div>
+        </div>
+      </div>
+  </body>
+  <script src="../script.js"></script>
+</html> 
