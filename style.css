@@ -102,6 +102,7 @@
   td {text-align: center;padding-left:1em;padding-right: 1em;}
   th {border-bottom: black 1px solid; }
   table {font-size: 15px;font-family:Cambria;border-top: black 1px solid;border-bottom: black 1px solid;margin: auto;position: relative;bottom:20px;}
+  iframe {margin:auto;width: 560px; height: 315px;}
 
   @media screen and (max-width: 600px) {
 
@@ -134,6 +135,7 @@
 
     table {font-size: 9px;bottom:0;}
     td {padding: 0 0 0 0;}
+    iframe {width:280px;height: 157px;margin-left:10%;}
   }
   
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
