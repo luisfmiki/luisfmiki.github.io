@@ -121,7 +121,7 @@
       display: block;
     }
     .links {
-      top: 600px;
+      top: 560px;
       left: 0;
       width: 100%;
       justify-content: space-evenly;
@@ -144,7 +144,7 @@
     .caixa {display: flex !important;justify-content: space-around !important;flex-wrap: wrap;}
     .caixa h3 {font-size: 1rem;width:190px;margin:0.5rem 0 0.5rem 0;}
     .caixa .ilus {width:5rem;height: 4rem;padding-top: 0.5rem;}
-    .caixa .quem {color:#a7a7a7; font-size: 0.75rem; position: relative;bottom:0.5rem;left:0.4rem;}
+    .caixa .quem {color:#a7a7a7; font-size: 0.75rem; position: relative;bottom:0.5rem;left:1%;}
     .nbarra {z-index: 1;position: absolute;top:50px;width: 95%;}
     .caixa .vl {display: none;}
     .caixa .chave {display: none;}
