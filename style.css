@@ -51,14 +51,14 @@
     background-color: inherit;
     border:solid 1px #999999;
     border-radius: 4px;
-    padding: 3% 0 3%;
+    padding: 3% 0 2%;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     justify-content: center;
     
   }
   #text {margin-left: 5%;text-align:left;line-height: 1.4;width: 50%;}
-  #sci {position: absolute; top:300px;}
+  #sci {position: absolute; top:500px;}
   #tinker {width: 50%;margin: 2% auto 0 auto;}
   #bsp4 {display: inline;position: relative;bottom:130px;margin-left:20%;font-family:'Courier New', Courier, monospace;}
   .overview {font-family:Cambria;display: inline-block;position: relative;bottom:25px;margin-left: 10%;}
@@ -72,7 +72,7 @@
   
   .nbarra a { 
     color:#bdc1c6;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;;
     font-size: 20px;
     text-decoration: none;
   }
@@ -92,9 +92,19 @@
   }
 
   .caixa {
-    align-content: stretch; 
+    flex-wrap: wrap;
+    justify-content: space-evenly !important;
     z-index: 2;
   }
+  .caixa .ilus {width:200px;height:140px;margin-left:20px;}
+  .caixa h3 {font-size: 1.25rem;margin:0 0 0 2rem;width:512px;}
+  .caixa a:hover {text-decoration: none !important;}
+  .caixa .vl {border-left: 1px solid white; height:160px;margin-left:20px;}
+  .caixa .chave {margin-left:20px;width:500px;}
+  .caixa .quem {color:#a7a7a7; font-size: 0.75rem;position: relative;bottom:100px;right:300px;}
+  .ic {position:relative;right:60%;}
+  .ic img {width:1.5rem;position: relative;left:7%;bottom:15px;}
+  .ic a {font-size: 0.875rem; color:#8ab4f8;font-weight: bold;font-family: 'Noto Sans JP', sans-serif;position: relative;left:7%;bottom:20px;}
 
   .textod {margin: 10px 10%;}
 
@@ -111,7 +121,7 @@
       display: block;
     }
     .links {
-      top: 700px;
+      top: 600px;
       left: 0;
       width: 100%;
       justify-content: space-evenly;
@@ -120,7 +130,8 @@
     #highlight {left: 8px !important;}
     #a {display: none;}
     #c {display: none;}
-    #prime {display: block; width:100%;}
+    #e {display: none;}
+    #prime {display: block; width:100%;padding-bottom: 3%;}
     #text {width:90%;}
     #tinker {width: 100%;}
     #bsp4 {color:black;display: inline;position: relative;font-size: 10px;bottom:3%;margin-left: 8%;}
@@ -130,9 +141,14 @@
     #med {position: relative; top:160px;}
     .pg {height: 380px;}
     #pg2 {height:440px}
-    .caixa {display: flex !important;}
+    .caixa {display: flex !important;justify-content: space-around !important;flex-wrap: wrap;}
+    .caixa h3 {font-size: 1rem;width:190px;margin:0.5rem 0 0.5rem 0;}
+    .caixa .ilus {width:5rem;height: 4rem;padding-top: 0.5rem;}
+    .caixa .quem {color:#a7a7a7; font-size: 0.75rem; position: relative;bottom:0.5rem;left:0.4rem;}
     .nbarra {z-index: 1;position: absolute;top:50px;width: 95%;}
-
+    .caixa .vl {display: none;}
+    .caixa .chave {display: none;}
+    .ic {position:relative;top:40px;right:49%;margin-bottom: 20px;}
     table {font-size: 9px;bottom:0;}
     td {padding: 0 0 0 0;}
     iframe {width:280px;height: 157px;margin-left:10%;}
@@ -156,4 +172,5 @@
       border-style:solid; 
       border-width: 0.5px;
       border-color: chartreuse;}
+    .topnav.responsive #e {display:none !important;}
   }
