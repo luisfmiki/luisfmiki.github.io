@@ -1,3 +1,11 @@
+var y = 0;
+document.addEventListener('scroll', e => {
+  y = window.scrollY;
+  var elems = document.getElementsByClassName('arrowup');
+  if(y>=200) elems[0].style.display = "block";
+  else elems[0].style.display = "none";
+});
+
 function myFunction() {
     var x = document.getElementById("myTopnav");
     var barra_verde = document.getElementById("highlight");
@@ -19,5 +27,8 @@ function escondeMenu() {
     }
 }
 
+function voltaCima() {
+  window.scroll(0, 0);
+}
 
 

@@ -58,7 +58,7 @@
     
   }
   #text {margin-left: 5%;text-align:left;line-height: 1.4;width: 50%;}
-  #sci {position: absolute; top:500px;}
+  #sci {position: absolute; top:700px;}
   #tinker {width: 50%;margin: 2% auto 0 auto;}
   #bsp4 {display: inline;position: relative;bottom:130px;margin-left:20%;font-family:'Courier New', Courier, monospace;}
   .overview {font-family:Cambria;display: inline-block;position: relative;bottom:25px;margin-left: 10%;}
@@ -92,11 +92,18 @@
   }
 
   .caixa {
+    display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly !important;
     z-index: 2;
+    border:solid 1px #999999;
+    border-radius: 4px;
+    padding: 3% 0 2%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position:relative; top:20px;
   }
-  .caixa .ilus {width:200px;height:140px;margin-left:20px;}
+  .caixa .ilus {width:200px;height:140px;margin-left:20px;border-radius: 10px;}
   .caixa h3 {font-size: 1.25rem;margin:0 0 0 2rem;width:512px;}
   .caixa a:hover {text-decoration: none !important;}
   .caixa .vl {border-left: 1px solid white; height:160px;margin-left:20px;}
@@ -107,6 +114,9 @@
   .ic a {font-size: 0.875rem; color:#8ab4f8;font-weight: bold;font-family: 'Noto Sans JP', sans-serif;position: relative;left:7%;bottom:20px;}
 
   .textod {margin: 10px 10%;}
+  .arrowup {display:none;background-color: rgb(182, 197, 197);border-radius: 50%;width:55px;height:55px;text-align: center;position:fixed;bottom: 10px;right:10px;box-shadow:0 0 1rem #0f0f0f;}
+  .arrowup img {width:40px;margin:5px auto;}
+  .arrowup:hover {cursor: pointer;box-shadow:0 0 0.5rem white;}
 
   h4 {align-self: flex-start;}
   td {text-align: center;padding-left:1em;padding-right: 1em;}
@@ -127,10 +137,9 @@
       justify-content: space-evenly;
     }
 
+    #sci {top:500px;}
     #highlight {left: 8px !important;}
-    #a {display: none;}
-    #c {display: none;}
-    #e {display: none;}
+    #a, #c, #e, #f {display: none;}
     #prime {display: block; width:100%;padding-bottom: 3%;}
     #text {width:90%;}
     #tinker {width: 100%;}

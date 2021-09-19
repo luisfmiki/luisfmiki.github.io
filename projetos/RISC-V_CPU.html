@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Luís F. Miki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet"> 
+</head>
+
+  <body style="background-color: #4b4848;">
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html" id="d">Atividades</a>
+        <a href="../sobre.html" id="c">Sobre</a>
+        <a href="skills.html" id="f">Qualificações</a>
+        <a id="e">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Luís F. Miki</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a class="icon"><div id="lan">pt</div><div id="seta">&#9660;</div></a> 
+    </div>
+      <div id="highlight">&nbsp;</div>
+      <div class="nbarra" onclick="escondeMenu()">
+        <div id="prime" style="flex-direction: column;overflow-x: hidden;">
+            <h2 style="margin: 10px 10%;">Datapath de uma CPU RISC-V 32-bit ISA em Verilog</h2>
+            <hr style="color:rgb(214, 214, 214); width:80%;">
+            <p class="textod">A disciplina de Introdução à Arquitetura de Computadores (DCC017) explora o funcionamento do processador 
+                e da memória de computadores. A fim de fixar todo o conhecimento adquirido na
+                parte do processador, a linguagem de descrição de hardware Verilog foi escolhida para
+                ver na prática o esquema de uma CPU e seu caminho de dados. Nesse sentido, esse trabalho prático serviu como exercı́cio da linguagem e como um estudo detalhado
+                da arquitetura de instruções RISC-V.
+            <br><br>O TP foi desenvolvido pelos alunos:<br>
+            </p>
+            <ul class="textod">
+                <li>Luís Miki</li>
+                <li><a style="color:#8ab4f8;font-size: inherit;" href="https://br.linkedin.com/in/tom%C3%A1s-tamantini-19a01a206">Tomás Tamantini</a></li>
+            </ul>
+            <p class="textod">Para a realização deste trabalho prático foram utilizadas as ferramentas do Google
+                Colab para a implementação dos códigos em verilog e os testes em assembly, e o DigitalJS para a visualização dos circuitos.
+                A imagem a seguir é uma fração do circuito responsável pela entrega dos dados do banco de registradores para a unidade lógica e aritmética:</p>
+            <img src="../img/reg-alu.png" alt="reg-alu_circuit" style="width: 100%;margin:auto;">
+            <p class="textod">À esquerda temos os inputs dos sinais de controle e do clock, no meio há o banco de registradores,
+                 e à direita, a ALU e os outputs.<br><br>
+                 Caso queira ver em detalhes a implementação desse trabalho com os comentários,
+                  acesse o arquivo do Jupyter Notebook disponibilzado abaixo: <br>
+                  <a style="color:#8ab4f8;font-size: inherit;" href="https://drive.google.com/file/d/1GzO6Qp_aAmRndnAIs_NiCfxNObi4XG0W/view?usp=sharing">https://drive.google.com/file/d/1GzO6Qp_aAmRndnAIs_NiCfxNObi4XG0W/view?usp=sharing</a>
+            </p>
+                <hr style="color:lightslategrey; width:80%;">
+            <h4 style="margin: 10px 10%;">Bibliografia</h4>
+            <p class="textod">Patterson, David A., and John L. Hennessy. "Computer Organization and Design RISC-V Edition: The Hardware Software Interface"
+                <br><a style="color:#8ab4f8;font-size: inherit;" href="https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf">The RISC-V Instruction Set Manual Volume I: User-Level ISA</a>
+            </p>
+        </div>
+      </div>
+  </body>
+  <script src="../script.js"></script>
+</html> 
