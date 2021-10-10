@@ -2,7 +2,7 @@ var y = 0;
 document.addEventListener('scroll', e => {
   y = window.scrollY;
   var elems = document.getElementsByClassName('arrowup');
-  if(y>=200) elems[0].style.display = "block";
+  if(y>=300) elems[0].style.display = "block";
   else elems[0].style.display = "none";
 });
 

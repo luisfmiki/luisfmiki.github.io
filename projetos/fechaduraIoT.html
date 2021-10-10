@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Luís F. Miki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+     
+</head>
+
+  <body style="background-color: #4b4848;">
+    <div class="topnav" id="myTopnav">
+        <a href="../index.html" id="d">Atividades</a>
+        <a href="../sobre.html" id="c">Sobre</a>
+        <a href="skills.html" id="f">Qualificações</a>
+        <a id="e">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Luís F. Miki</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a class="icon"><div id="lan">pt</div><div id="seta">&#9660;</div></a> 
+    </div>
+      <div id="highlight">&nbsp;</div>
+      <div class="nbarra" onclick="escondeMenu()">
+        <div id="prime" style="flex-direction: column;overflow-x: hidden;">
+            <h2 style="margin: 10px 10%;">Fechadura Elétrica com acionamento pelo smartphone</h2>
+            <hr style="color:rgb(214, 214, 214); width:80%;">
+            <p class="textod">A fim de facilitar a vida de moradores de um prédio, instalei um módulo WiFi
+                ESP8266 para acionar a fechadura elétrica de uma porta de vidro do térreo. Essa mesma fechadura
+                inicialmente, era acionada apenas com o controle digital de acesso AGL com senha (O cabeamento da interfonia instalado
+                era destinado a um outro portão). Como não tinha
+                como abrir essa porta do apartamento, era necessário que o morador decesse para o térreo e destrancar
+                a porta manualmente se recebesse uma visita, e pelo visto, ficava pior a medida que o andar aumentava.
+            <br><br>Após estudar o circuito do controle de acesso e fazer o devido planejamento, calculei o valor do resistor
+            e o transistor necessário (BC639) para o acionamento da fechadura, além de verificar se o microcontrolador iria
+            caber dentro da caixinha do controle de acesso. Em seguida, comecei a instalação:<br>
+            </p>
+            <div style="display: flex;flex-wrap: wrap;margin: auto;">
+            <img src="../img/fechadura-iot/fechadura.jpeg" style="width: 400px;height: 500px;" alt="door and circuit photo">
+            <img src="../img/fechadura-iot/circuit1.jpg" style="width: 250px; height: 500px;margin: auto;" alt="schematic">
+            </div>
+            <p class="textod">Após ter montado a parte física do projeto, chegou a parte do código, no qual optei pro usar
+                por usar o servidor e aplicativo <i>Blynk</i> ao invés de programar um servidor HTTP dedicado por fins de praticidade
+                já que usar o mesmo demandaria um endereço de ip estático (ISPs geralmente cobram por isso) e configurar o firewall do roteador para aceitar conexões
+                (ISPs geralmente proibem isso já que o roteador WiFi da pessoa que me ofereceu acesso pertence à <i>Vero</i>):
+            </p>
+            <pre style="margin-left: 8vw;">
+    #include &lt;Arduino.h&gt;
+    #include &lt;ESP8266WiFi.h&gt;
+    #include &lt;BlynkSimpleEsp8266.h&gt;
+    
+    char auth[] = ""; // Auth token
+    
+    // WiFi credentials
+    char ssid[] = "";
+    char pass[] = "";
+    
+    void multPulse(int pin, int pulses) {
+        for(int i=0;i&lt;pulses;i++) {
+            digitalWrite(pin, HIGH);
+            delay(100);
+            digitalWrite(pin, LOW);
+            delay(200);
+        }
+    }
+    
+    void setup() {
+        // Debug console
+        Serial.begin(9600);
+        Blynk.begin(auth, ssid, pass);
+    }
+    
+    void loop() {
+        Blynk.run();
+        if(digitalRead(4) == 1) 
+        multPulse(4, 6);
+    }
+            </pre>
+            <p class="textod">Antes de completar o código, quebrei um pouco a cabeça até descobrir que para acionar
+                a fechadura e abrir a porta era necessário no mínimo 6 pulsos e não 1. Isso explica a função multPulse().
+                Após finalizar o projeto, bastava a apenas os moradores baixarem o Blynk para seu smartphone, scanearem um QR code e
+                apertar um simples botão para abrir a porta para visitas sem sair de seus apartementos :) 
+            </p>
+        </div>
+        
+        <div class="arrowup" onclick="voltaCima()"><img src="../img/double_up_icon_155472.png"></div>
+      </div>
+      
+  </body>
+  <script src="../script.js"></script>
+</html> 
