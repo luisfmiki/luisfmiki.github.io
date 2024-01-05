@@ -1,0 +1,13 @@
+/* css/common/typography.css */
+
+/* Font styles, heading styles, etc. */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    color: #b20d0d;
+}
+
+p {
+    color: #555;
+}
+
+/* Add more typography styles if needed */

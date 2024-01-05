@@ -1,0 +1,9 @@
+/* css/common/common.css */
+
+/* Import all common styles */
+@import 'reset.css';
+@import 'layout.css';
+@import 'typography.css';
+@import 'buttons.css';
+
+/* Add more common styles if needed */

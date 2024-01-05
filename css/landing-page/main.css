@@ -1,0 +1,12 @@
+/* css/landing-page/main.css */
+
+/* Landing page specific styles */
+#hero {
+    /*background-image: url('path/to/hero-image.jpg');*/
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* Add more landing page styles if needed */

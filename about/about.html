@@ -1,0 +1,100 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/common/layout.css">
+    <link rel="stylesheet" href="../css/common/typography.css">
+    <link rel="stylesheet" href="../css/common/buttons.css">
+    <link rel="stylesheet" href="../css/common/common.css">
+
+    <!-- Link landing page specific styles -->
+    <link rel="stylesheet" href="../css/about-page/main.css">
+    <link rel="stylesheet" href="../css/about-page/story-section.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>Luís F. Miki - About</title>
+</head>
+<body>
+    
+<header>
+    <div id="lang-switch-btn-container">
+        <button id="lang-switch-btn"></button>
+    </div>
+    <nav>
+        <ul>
+            <li><a style="color:rgb(121, 121, 121)" id="home" href="../index.html"></a></li>
+            <li><a style="color:rgb(121, 121, 121)" id="projects" href="../projects/projects.html"></a></li>
+            <li><a style="color:white" id="about" href="about.html"></a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="content-div">
+    <div id="content-background" style="background-image: url('../img/microcontrollers.webp');">
+    </div>
+    <div id="content-background-blur" style="background-image: url('../img/microcontrollers.webp');">
+    </div>
+    <div id="story">
+        <div class="upper">
+            <div id="text1"></div>
+            <div style="font-size: 10px;font-weight: 300;padding-top: 5px;">
+                <img src="../img/IMG_3824-scaled.jpg">
+                <div><a id="lab1description" href="https://delt.eng.ufmg.br/laboratorios/"></a></div>
+            </div>
+        </div>
+        <div class="mid">
+            <div style="font-size: 10px;font-weight: 300;padding-bottom: 5px;">
+                <img src="../img/sala1.webp">
+                <div><a id="lab2description" href="https://eitaufmg.wixsite.com/eita/projetos"></a></div>
+            </div>
+            <div id="text2"></div>
+        </div>
+        <div class="bottom">
+            <div id="thrid">
+                <div id="text3"></div>
+                <ul style="padding-left: 15px;width:800px;">
+                <li style="color:rgb(236, 44, 44);"><span id="proglang" style="font-weight: 600;color:black"></span>
+                    C | C++ | LabVIEW | Python | Shell | Javascript | Rust;
+                </li>
+                <li style="color:rgb(1, 81, 155);"><span id="tools" style="font-weight: 600;color:black"></span>
+                    Git | Makefile | CMake | Unit Testing | Linux/Windows | AWS | Docker;
+                </li>
+                <li style="color:rgb(26, 164, 2);"><span id="ll-hw" style="font-weight: 600;color:black"></span>
+                    Logic Analyzer | PCB Desgin | Soldering | ADC | Timers | DMA | I2C | SPI | TCP/IP Stack | BLE
+                </li>
+                </ul>
+            </div>
+            <div style="font-size: 10px;font-weight: 300;margin-top: 5px;">
+                <img src="../img/sala2.webp">
+                <div id="lab3description"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Other sections and content -->
+
+    
+
+    <script src="../js/common/utils.js"></script>
+    <script src="../js/common/common.js"></script>
+
+    <!-- Link landing page specific scripts -->
+    <script src="../js/landing-page/main.js"></script>
+    <script src="../js/landing-page/header.js"></script>
+    <script src="../js/landing-page/hero-section.js"></script>
+
+    <script src="../js/scripts.js"></script>
+    <script src="../js/language-switch.js"></script>
+
+    <!-- Other scripts if needed -->
+    <!--<script src="js/main.js"></script> -->
+</body>
+</html>

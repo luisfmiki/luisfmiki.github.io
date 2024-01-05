@@ -1,0 +1,28 @@
+{ 
+"/index.html": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "hello": "Hello! ^_^\nI'm Luís Fernando,\nEmbedded Developer",
+    "ido": "I develop and maintain embedded systems. That is, software/hardware that control consumer electronics, automotive, healthcare, defense equipments, and so on. "
+  },
+"/projects/projects.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About"
+  },
+"/about/about.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About",
+  "text1": "Majoring Electrical Engineering with emphasis in microelectronics, I'm an undergrad student at Federal University of Minas Gerais (UFMG) highly interested in technology and science topics such as mixed-signal electronics, optics, nanotechnology, AI, and computer architecture.\nBesides the fun of learning these topics, my motivation comes from the pleasure of understading how things around us work, and with this understanding, contribute to the humanity's technological progress.",
+  "lab1description": "Analog and digital electronics teaching lab at UFMG",
+  "text2": "At the moment, aside of hobby projects, most of my experience in embedded comes from an technology learning space at my university called \"EITA!\". At this space I work with other undergrad students creating scientifc instrumentation (mainly) and physics demonstrations. Even though I think EITA! is a perfect enviroment for hands-on learning, I'm planning to do an internship in the year of 2024.\n The figures at this page shows some locations where I work/learn." ,
+  "lab2description": "Prototyping area at EITA!",
+  "text3": "As for my skills, let's say you can have a deeper understanding seeing the \"Projects\" tab, but for summary purposes, I currently have knowledge in:",
+  "lab3description": "Workshop area at EITA!",
+  "proglang": "Programming languages: ",
+  "tools": "Tools: ",
+  "ll-hw": "Low-Level/Hardware: "
+  }
+}

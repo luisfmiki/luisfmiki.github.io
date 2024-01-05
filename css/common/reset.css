@@ -1,0 +1,15 @@
+/* css/common/reset.css */
+
+/* Reset styles for consistent browser rendering */
+body, h1, h2, h3, p, figure, blockquote, dl, dd, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Add more reset styles if needed */
