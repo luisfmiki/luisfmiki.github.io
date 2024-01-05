@@ -59,7 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function iterateJson(data) {
-        const page = window.location.pathname;
+        let page = window.location.pathname;
+        if (page === "/") {
+            page = "/index.html";
+        }
         for (const key in data[page]) {
             document.getElementById(key).innerText = data[page][key];
         }
