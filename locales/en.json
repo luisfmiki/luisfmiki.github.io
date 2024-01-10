@@ -3,21 +3,83 @@
     "home": "Home",
     "projects": "Projects",
     "about": "About",
-    "hello": "Hello! ^_^\nI'm Luís Fernando,\nEmbedded Developer",
+    "hello": "Hello! ^_^<br>I'm Luís Fernando,<br>Embedded Developer",
     "ido": "I develop and maintain embedded systems. That is, software/hardware that control consumer electronics, automotive, healthcare, defense equipments, and so on. "
   },
 "/projects/projects.html": {
   "home": "Home",
   "projects": "Projects",
-  "about": "About"
+  "about": "About",
+  "1": {
+    "title": "Digital Refractometer",
+    "keywords": "C, C++, Timers, Optics, Instrumentation, ATmega328, Photodiode, Low-power",
+    "shortdescription": "A Refractometer is a device that measures a fluid's refractive index, that is, how much the path of light is bent compared to vacuum within it. Used mainly in fluid products quality control. In this project, it's presented a low-cost digital version of this device."
   },
+  "2": {
+    "title": "UaiKey v2",
+    "keywords": "C++, IoT, ESP8266, RFID, Cryptography, LabVIEW, TCP/IP",
+    "shortdescription": "UaiKey is a acess control system built with an embedded door lock and a desktop admin control panel that can access the embedded device remotely from anywhere with internet access. The communication between the devices and the transactions are secured."
+  },
+  "3": {
+    "title": "MeuLab",
+    "keywords": "C++, FreeRTOS, ESP32, WebSockets, Sensors, IoT, LabVIEW",
+    "shortdescription": "MeuLab is an embedded platform that accepts a wide variety of sensors. MeuLab can measure, plot, and analyze multiple physical quantites data simultaneously. It communicates via wireless with a desktop or mobile app that show the results."
+  },
+  "4": {
+    "title": "Glass door",
+    "keywords": "Iot, Automation, ESP8266, Electronics",
+    "shortdescription": "This project returns at my beggining in the embedded world at the second year of the covid pandemic. It is a modification of a residential building door lock. I made it unlockable throught the resident's smartphone since the only way to unlock the door was locally."
+  },
+  "5": {
+    "title": "Voltage Source",
+    "keywords": "PCB, Electronics, Digital, Analog",
+    "shortdescription": "Undergraduate project from the Electronic Circuits Laboratory I. Powered by the local electrical grid network, it is presented a voltage-source that varies from -15V to +15V with a digital over-current protection."
+  },
+  "6": {
+    "title": "Microscopy Analogies",
+    "keywords": "C, STM32, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM",
+    "shortdescription": "Project under development"
+  },
+  "keyword": "Keywords: ",
+  "type": "Type: ",
+  "science": "Scientifc ",
+  "tech": "Tech ",
+  "hobby": "Hobby ",
+  "school": "Scholar ",
+  "seedetail": "See project details <i class=\"fa-solid fa-circle-info\"></i>"
+  },
+"/projects/digital-refractometer/index.html": {
+  "name": "digital-refractometer",
+  "keywords": "C, C++, Timers, Optics, Instrumentation, ATmega328, Photodiode, Low-power"
+  },
+"/projects/uaikey/index.html": {
+  "name": "uaikey",
+  "keywords": "C++, IoT, ESP8266, RFID, Cryptography, LabVIEW, TCP/IP"
+  },
+"/projects/meulab/index.html": {
+  "name": "meulab",
+  "keywords": "C++, FreeRTOS, ESP32, WebSockets, Sensors, IoT, LabVIEW"
+  },
+"/projects/glass-door/index.html": {
+  "name": "glass-door",
+  "keywords": "Iot, Automation, ESP8266, Electronics"
+  },
+"/projects/voltage-source/index.html": {
+  "name": "voltage-source",
+  "keywords": "PCB, Electronics, Digital, Analog"
+  },
+"/projects/microscopy-analogies/index.html": {
+  "name": "microscopy-analogies",
+  "keywords": "C, STM32, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM"
+}, 
+
 "/about/about.html": {
   "home": "Home",
   "projects": "Projects",
   "about": "About",
   "text1": "Majoring Electrical Engineering with emphasis in microelectronics, I'm an undergrad student at Federal University of Minas Gerais (UFMG) highly interested in technology and science topics such as mixed-signal electronics, optics, nanotechnology, AI, and computer architecture.\nBesides the fun of learning these topics, my motivation comes from the pleasure of understading how things around us work, and with this understanding, contribute to the humanity's technological progress.",
   "lab1description": "Analog and digital electronics teaching lab at UFMG",
-  "text2": "At the moment, aside of hobby projects, most of my experience in embedded comes from an technology learning space at my university called \"EITA!\". At this space I work with other undergrad students creating scientifc instrumentation (mainly) and physics demonstrations. Even though I think EITA! is a perfect enviroment for hands-on learning, I'm planning to do an internship in the year of 2024.\n The figures at this page shows some locations where I work/learn." ,
+  "text2": "At the moment, aside of hobby projects, most of my experience in embedded comes from an technology learning space at my university called \"EITA!\". At this space I work with other undergrad students creating scientifc instrumentation (mainly) and physics demonstrations. Even though I think EITA! is a perfect enviroment for hands-on learning, I'm planning to do an internship by the year of 2024.\n The figures at this page shows some locations where I work/learn." ,
   "lab2description": "Prototyping area at EITA!",
   "text3": "As for my skills, let's say you can have a deeper understanding seeing the \"Projects\" tab, but for summary purposes, I currently have knowledge in:",
   "lab3description": "Workshop area at EITA!",

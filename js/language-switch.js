@@ -64,9 +64,30 @@ document.addEventListener('DOMContentLoaded', function () {
             page = "/index.html";
         }
         for (const key in data[page]) {
-            document.getElementById(key).innerText = data[page][key];
+            const element = document.getElementById(key);
+            if (element) {
+                element.innerHTML = data[page][key];
+            } 
+            else {
+                const elements = document.getElementsByClassName(key);
+                if (!isNaN(key)) {
+                    let i = 0;
+                    for (const secondkey in data[page][key]) {
+                        elements[i].innerHTML = data[page][key][secondkey];
+                        i++;
+                    }
+                } 
+                else {
+                    for (let i = 0; i < elements.length; i++) {
+                        elements[i].innerHTML = data[page][key];
+                    }
+                }
+            }
         }
     }
+
+
+    
 
     // Initial setup - load content for the stored language preference
     const storedLang = localStorage.getItem('currentLang') || 'en'; // default lang == en

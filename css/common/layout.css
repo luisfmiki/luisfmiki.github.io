@@ -30,11 +30,10 @@ nav ul li a {
     font-weight: bold;
 }
 /* Add more layout styles if needed */
+h2 {font-family: 'Noto Sans' !important;}
 
 #content-div {
     position: relative;
-    width: 100%;
-    height: 820px;
     overflow-x: hidden;
   }
 
@@ -47,7 +46,7 @@ nav ul li a {
 
 #content-background-blur  {
   width: 100%;
-  height: 100%;
+  height: 1200px;
   filter: blur(6px);
 }
 
@@ -68,10 +67,24 @@ nav ul li a {
         z-index: 0;
     }     */
     #content-background {
-        background-position: -600px;
+        background-position: -300px;
+        height: 800px;
+        background-attachment: unset;
+        filter: blur(4px);
+        position:absolute;
+        top: -60px;
     }
 
-    #content-div {
-      height: 1600px;
+    #content-background-blur {
+      height: inherit;
+      filter: blur(4px);
+      background-attachment: unset;
     }
+
+    #content-div {height:3000px;}    
+
+    /* #content-background, #content-background-blur {
+      background-size: 100% 500px;
+    } */
+
 }

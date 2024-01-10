@@ -3,14 +3,75 @@
     "home": "ホーム",
     "projects": "プロジェクト",
     "about": "自己紹介",
-    "hello": "こんにちは！ ^_^\nルイス・フェルナンドです。\n 組み込み開発者",
+    "hello": "こんにちは！ ^_^<br>ルイス・フェルナンドです。<br> 組み込み開発者",
     "ido": "組み込みシステムの開発と保守を行っています。つまり、電化製品、自動車、医療、科学、防衛機器などを制御するソフトウェアやハードウェアです。"
   },
   "/projects/projects.html": {
     "home": "ホーム",
     "projects": "プロジェクト",
-    "about": "自己紹介"
+    "about": "自己紹介",
+    "1": {
+      "title": "デジタル屈折メーター",
+      "keywords": "C、C++、タイマー、光学、計器、ATmega328、フォトダイオード",
+      "shortdescription": "屈折メーターは液体の屈折率を測定する装置であり、光の進む経路が真空と比較してどれだけ曲がるかを示します。主に液体製品の品質管理に使用されます。このプロジェクトではこの装置の低コストなデジタル版が紹介されています。"
+    },
+    "2": {
+      "title": "UaiKey v2",
+      "keywords": "C++、IoT、ESP8266、RFID、暗号化、LabVIEW、TCP/IP",
+      "shortdescription": "UaiKeyは組み込みドアロックとデスクトップ管理コントロールパネルから構築されたアクセス制御システムです。このシステムはインターネットアクセスがあらゆる場所から組み込みデバイスにリモートでアクセスできます。デバイス間の通信と取引はセキュリティで保護されています。"
+    },
+    "3": {
+      "title": "MeuLab",
+      "keywords": "C++、FreeRTOS、ESP32、WebSockets、センサー、IoT、LabVIEW",
+      "shortdescription": "MeuLabはさまざまなセンサーを受け入れる組み込みプラットフォームです。同時に複数の物理量のデータを測定、プロット、および分析できます。デスクトップやモバイルアプリと無線通信し結果を表示します。"
+    },
+    "4": {
+      "title": "ガラスのドア",
+      "keywords": "IoT、オートメーション、ESP8266、電子工学",
+      "shortdescription": "これは私の最初の組み込みプロジェクトです。COVIDパンデミック2年目に住居用ビルのドアロックを改造しました。スマートフォンを使用して住人のみがドアを開けられるようにしました。"
+    },
+    "5": {
+      "title": "電圧源",
+      "keywords": "PCB、エレクトロニクス、デジタル、アナログ",
+      "shortdescription": "電子回路実験の学部プロジェクト。電力ソースから供給される-15Vから+15Vまで変動する電圧源が紹介されています。デジタル過電流保護付き。"
+    },
+    "6": {
+      "title": "顕微鏡のアナロジー",
+      "keywords": "C、制御工学、信号処理、走査プローブ、SEM、STM、AFM",
+      "shortdescription": "開発中のプロジェクト"
+    },
+    "keyword": "キーワード: ",
+    "type": "タイプ: ",
+    "science": "科学的 ",
+    "tech": "テクニカル ",
+    "hobby": "趣味 ",
+    "school": "学術 ",
+    "seedetail": "プロジェクトの詳細を見る <i class=\"fa-solid fa-circle-info\"></i>"
   },
+  "/projects/digital-refractometer/index.html": {
+    "name": "デジタル屈折メーター",
+    "keywords": "C、C++、タイマー、光学、計器、ATmega328、フォトダイオード"
+    },
+  "/projects/uaikey/index.html": {
+    "name": "uaikey",
+    "keywords": "C++、IoT、ESP8266、RFID、暗号化、LabVIEW、TCP/IP"
+    },
+  "/projects/meulab/index.html": {
+    "name": "meulab",
+    "keywords": "C++、FreeRTOS、ESP32、WebSockets、センサー、IoT、LabVIEW"
+    },
+  "/projects/glass-door/index.html": {
+    "name": "ガラスのドア",
+    "keywords": "IoT、オートメーション、ESP8266、電子工学"
+    },
+  "/projects/voltage-source/index.html": {
+    "name": "電圧源",
+    "keywords": "PCB、エレクトロニクス、デジタル、アナログ"
+    },
+  "/projects/microscopy-analogies/index.html": {
+    "name": "顕微鏡のアナロジー",
+    "keywords": "C、制御工学、信号処理、走査プローブ、SEM、STM、AFM"
+  }, 
   "/about/about.html": {
     "home": "ホーム",
     "projects": "プロジェクト",
@@ -23,6 +84,6 @@
     "lab3description": "EITA!のワークショップエリア",
     "proglang": "プログラミング言語: ",
     "tools": "ツール: ",
-    "ll-hw": "低レベル/ハードウェア: "
+    "ll-hw": "低レベル・ハードウェア: "
   }
 }
