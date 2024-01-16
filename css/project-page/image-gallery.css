@@ -1,0 +1,45 @@
+.slideshow-container {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slides-container {
+    height: inherit;
+    display: flex;
+    transition: transform 1s ease-in-out;
+  }
+
+  .mySlides {
+    width: inherit;
+    height: inherit;
+  }
+
+  .mySlides img {    width: 150px;
+    height: inherit;}
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 57%;
+    width: auto;
+    padding: 4px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }

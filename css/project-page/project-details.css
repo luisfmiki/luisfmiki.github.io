@@ -1,9 +1,57 @@
 /* css/project-page/project-details.css */
-
+#story {display: flex;justify-content: space-evenly;padding-top: 20px;}
 /* Styles for displaying project details */
 #project-details h2 {
     font-size: 24px;
     margin-bottom: 15px;
 }
 
+.title {
+    background-color: #333;
+    color:white;
+    padding: 10px;
+    font-size: 35px;
+    font-family: Noto Sans;
+}
+
+.project-text {
+    width: 750px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-description {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 1000px;
+}
+
+.block {
+    background-color: rgb(221, 220, 219);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.pictures-div {
+    text-wrap:balance;
+    width: 350px;
+    font-size: 15px;
+    border: black 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+ol, ul {
+    list-style-position: inside;
+ }
+
 /* Add more project details styles if needed */
+@media only screen and (max-width: 768px) {
+    #story {flex-wrap: wrap;}
+    .project-text {height: 2000px; width: 95%;}
+    .project-description {height: 1500px; display:block;padding-top: 10px;}
+    .title{font-size: 20px;}
+    .block{margin-top: 10px;}
+}

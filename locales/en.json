@@ -4,7 +4,8 @@
     "projects": "Projects",
     "about": "About",
     "hello": "Hello! ^_^<br>I'm Luís Fernando,<br>Embedded Developer",
-    "ido": "I develop and maintain embedded systems. That is, software/hardware that control consumer electronics, automotive, healthcare, defense equipments, and so on. "
+    "ido": "I develop and maintain embedded systems. That is, software/hardware that control consumer electronics, automotive, healthcare, defense equipments, and so on. ",
+    "contact": "For more info, feel free to contact me at &nbsp;<a href=\"mailto:luisfmiki@gmail.com\">luisfmiki@gmail.com</a> &nbsp;<i class=\"fa-regular fa-envelope\"></i>"
   },
 "/projects/projects.html": {
   "home": "Home",
@@ -22,7 +23,7 @@
   },
   "3": {
     "title": "MeuLab",
-    "keywords": "C++, FreeRTOS, ESP32, WebSockets, Sensors, IoT, LabVIEW",
+    "keywords": "C++, FreeRTOS, ESP8266, WebSockets, Sensors, IoT, LabVIEW",
     "shortdescription": "MeuLab is an embedded platform that accepts a wide variety of sensors. MeuLab can measure, plot, and analyze multiple physical quantites data simultaneously. It communicates via wireless with a desktop or mobile app that show the results."
   },
   "4": {
@@ -37,7 +38,7 @@
   },
   "6": {
     "title": "Microscopy Analogies",
-    "keywords": "C, STM32, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM",
+    "keywords": "C, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM",
     "shortdescription": "Project under development"
   },
   "keyword": "Keywords: ",
@@ -49,12 +50,35 @@
   "seedetail": "See project details <i class=\"fa-solid fa-circle-info\"></i>"
   },
 "/projects/digital-refractometer/index.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About",
   "name": "digital-refractometer",
-  "keywords": "C, C++, Timers, Optics, Instrumentation, ATmega328, Photodiode, Low-power"
+  "keywords": "C, Timers, PWM, Optics, Instrumentation, ATmega328, Photodiode, Low-power",
+  "title": "Digital Refractometer &nbsp; <i class=\"fa-solid fa-camera\"></i>",
+  "objective": "<b>Objective: </b>Build an low-cost and precise digital refractometer to be used as data collector in a automation process that characterize human biological samples.",
+  "requirements": "<b>Requirements: </b><ol><li>The device should measure the refractive index of sample and room temperature;</li> <li>At least three differents light wavelengths need to be available to choose;</li><li>The device should deliever a report of measures through a .csv, but also show the current measure through a display;</li></ol>",
+  "role": "<b>Role: </b>Electronics and firmware",
+  "process": "<b>Development process and requirement meeting: </b><br><b>Requirment #1</b><br> First, made the optics modelling of the problem using GeoGebra to get the position of the optical components. After that, started to program an IC linear CCD sensor to get the value of light intensity, for this task I used ATmega328p's 3/3 timers to generate PWM for meeting the signal waveforms as instructed in the IC's datasheet (if more timers were needed, then would choose another microcontroller), also used two ADC pins to read the light intensity signal and temperature through a NTC Thermistor. With the light intensity versus position, used the optics geometric model and Snell's law to achieve the refractive index.<br><b>Requirement #2</b><br>Made a PCB with 3 SMD LEDs with different colors as an optical component metioned above. Only one color (wavelength) is on at a time. Thus, programmed this with a push button that changes the color.<br><b>Requirement #3</b><br>Used LabVIEW to program simple desktop interface do export the data throught a USB cable that connects with the device. The data is stored in the microcontroller's flash memory since the user can choose to collect after a long set of measures. For displaying the results, used the Adafruit's SSD1306 OLED library, but had to bypass the Adafruit's library to achieve low-power purposes. Speaking of low-power, also programmed the arduino to sleep after some time with no commands/tasks. Then had to program an on/off (sleep/wakeup) button through external interrupt and some assembly code to ensure a specific order of instructions.",
+  "problems": "<b>Problems and overcomes: </b><ul><li>For some reason the analog signal of the CDD was pretty random. Even certifying that the digital signals were exactly as the IC's datasheet instructs, I struggled for some time until I realized that the signal was much alike an floating pin. Then tried to put a pull-down resistor between the ADC pin and the anlog pin of the IC. Finally the analog value was coherent, however this resistor was not mentioned anywhere inside the IC's datasheet usage instructions.</li></ul>",
+  "imgdescription1": "A Digital Refractometer prototype made in <a href=\"https://eitaufmg.wixsite.com/eita\">EITA!</a>",
+  "imgdescription2": "TSL1401CL, the used Integrated-Circuit Linear CCD Sensor",
+  "imgdescription3": "The light rays optics model with a acrylic prism programmed in Geogebra"
   },
 "/projects/uaikey/index.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About",
   "name": "uaikey",
-  "keywords": "C++, IoT, ESP8266, RFID, Cryptography, LabVIEW, TCP/IP"
+  "keywords": "C++, IoT, ESP8266, RFID, Cryptography, LabVIEW, TCP/IP",
+  "title": "Uaikey v2 &nbsp;<i class=\"fa-solid fa-building-lock\"></i>",
+  "objective": "<b>Objective: </b>Since the losing of keys were becoming a problem in the physics department, emrgerged a need to build a low-cost access control system for the laboratories.",
+  "requirements": "<b>Requirements: </b><ol><li>The acess control would be using the university's ID cards;</li><li>A desktop app for the administrator of the laboratory;</li><li>Wireless communication between the devices of the whole system;</li></ol>",
+  "role": "<b>Role: </b>Embedded & Desktop software",
+  "process": "<b>Development process and requirement meeting: </b><br>Since I worked on the second version of the system, all the requirements were basically already met but the original programmer was not available. So what I did most was a reverse engineering, refactor, and optimize of the embedded code, for instance, the cryptographic algorithm was only using the first byte of keys of N-bytes in all communcation messages😱, it was a mess, so I decided to rebuild the crypto code from zero. I don't blame him, I've been told that he coded this system right after learning C++. Also, all of the desktop app was on top of the C++ Qt library, but we deciced to remake it using LabVIEW since is a language quite used in EITA!. Besides that, also added some new functionalities and plan to implement a state machine inside the embedded code to display the number of people inside the room to be used in the physics's department clean room.<br>Since this project is not small, I encourage you to ask me directly at my contacts for any question regarding things like harwared used and technical aspects. A more detailed page of this project first version can be found <a href=\"https://eitaufmg.wixsite.com/eita/uaikey\">here</a> (Portuguese)",
+  "problems": "<b>Problems and overcomes: </b><ul><li>There was a critcal problem where that if the embedded device somehow stopped responding in the middle of communcation transactions because of things like power shut-downs or unpredicted code sequence bugs (super-loop embedded architecture), this could lead to serious memory leaks and desynchronization in data between the embedded device and the remote control device. What I did was a 'pseudo-protocol' on top of TCP to handle those kind of failures in the communication link.</li",
+  "imgdescription1": "The Uaikey's v2 embedded device to read the acess cards",
+  "imgdescription2": "The Uaikey's v2 remote desktop admin panel"
   },
 "/projects/meulab/index.html": {
   "name": "meulab",
@@ -70,7 +94,7 @@
   },
 "/projects/microscopy-analogies/index.html": {
   "name": "microscopy-analogies",
-  "keywords": "C, STM32, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM"
+  "keywords": "C, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM"
 }, 
 
 "/about/about.html": {

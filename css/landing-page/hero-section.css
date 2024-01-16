@@ -63,6 +63,15 @@
     border: 4px solid black;
 }
 
+#contact {
+    position: absolute;
+    top: 450px;
+    z-index: 300;
+    width: 855px;
+    left: 50%;
+    margin-left: -421px;
+    text-align: center;
+}
 @media only screen and (max-width: 768px) {
     #hero {
         width:100%;
@@ -79,6 +88,14 @@
     }
     #hero-text {
         width:80%;
+    }
+    #contact {
+        top: 650px;
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+        border-radius: unset;
+        padding: unset;
     }
 }
 /* Add more hero section styles if needed */

@@ -49,45 +49,78 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add an event listener to the search input
     searchInput.addEventListener('input', function () {
       const searchTerm = searchInput.value.toLowerCase();
-
-      const xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-          if (xhr.readyState === XMLHttpRequest.DONE) {
-              if (xhr.status === 200) {
-                const data = JSON.parse(xhr.responseText);
-                for(const project in willAppear) {
-                  const key = "/projects/".concat(project, "/index.html");
-                  console.log(key);
-                  console.log(data[key]);
-                  if (findStringInObject(searchTerm, data[key])) {
-                    willAppear[project] = true;
-                  } else {
-                    willAppear[project] = false;
+      if (document.documentElement.lang === "jp") {
+        
+        const xhrjp = new XMLHttpRequest();
+        xhrjp.onreadystatechange = function () {
+            if (xhrjp.readyState === XMLHttpRequest.DONE) {
+                if (xhrjp.status === 200) {
+                  const data = JSON.parse(xhrjp.responseText);
+                  for(const project in willAppear) {
+                    const key = "/projects/".concat(project, "/index.html");
+                    if (findStringInObject(searchTerm, data[key])) {
+                      willAppear[project] = true;
+                    } else {
+                      willAppear[project] = false;
+                    }
                   }
+                  
+                } else {
+                    console.error('Error fetching JSON. Status:', xhrjp.status);
                 }
-                
-              } else {
-                  console.error('Error fetching JSON. Status:', xhr.status);
-              }
-          }
-          searchableElements.forEach(function (element) {
-            const hastoAppear = willAppear[element.id];
-    
-            // Check if the search term is empty or the element's text content contains the search term
-            if (searchTerm === '' || hastoAppear) {
-              // Display the element
-              element.style.display = 'block';
-            } else {
-              // Hide the element
-              element.style.display = 'none';
             }
-          });
-      };
+            searchableElements.forEach(function (element) {
+              const hastoAppear = willAppear[element.id];
+      
+              // Check if the search term is empty or the element's text content contains the search term
+              if (searchTerm === '' || hastoAppear) {
+                // Display the element
+                element.style.display = 'block';
+              } else {
+                // Hide the element
+                element.style.display = 'none';
+              }
+            });
+        };
 
-        xhr.open('GET', `../../locales/${document.documentElement.lang}.json`, true);
-        xhr.send();
+          xhrjp.open('GET', `../../locales/jp.json`, true);
+          xhrjp.send();
+      }
+      
+      const xhren = new XMLHttpRequest();
+        xhren.onreadystatechange = function () {
+            if (xhren.readyState === XMLHttpRequest.DONE) {
+                if (xhren.status === 200) {
+                  const data = JSON.parse(xhren.responseText);
+                  for(const project in willAppear) {
+                    const key = "/projects/".concat(project, "/index.html");
+                    if (findStringInObject(searchTerm, data[key])) {
+                      willAppear[project] = true;
+                    } else {
+                      willAppear[project] = false;
+                    }
+                  }
+                  
+                } else {
+                    console.error('Error fetching JSON. Status:', xhren.status);
+                }
+            }
+            searchableElements.forEach(function (element) {
+              const hastoAppear = willAppear[element.id];
+      
+              // Check if the search term is empty or the element's text content contains the search term
+              if (searchTerm === '' || hastoAppear) {
+                // Display the element
+                element.style.display = 'block';
+              } else {
+                // Hide the element
+                element.style.display = 'none';
+              }
+            });
+        };
 
-      //Loop through each searchable element
+          xhren.open('GET', `../../locales/en.json`, true);
+          xhren.send();
 
      
       
@@ -95,15 +128,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function findStringInObject(searchString, jsonObject) {
       // Build a regular expression dynamically based on the entered characters
-      const patternRegex = new RegExp(searchString.split('').join('.*'));
-
+      //const patternRegex = new RegExp(searchString.split('').join('.*'));
+      const escapedWord = searchString.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const patternRegex = new RegExp(escapedWord);
       //Iterate through each key-value pair in the object
+      const hasWord = false;
+      
+
       for (const key in jsonObject) {
-        if (Object.prototype.hasOwnProperty.call(jsonObject, key)) {
+
           const value = jsonObject[key].toLowerCase();
-          // Check if the search string is present in the current value
-          return patternRegex.test(value);
+          if (jsonObject["name"] === "デジタル屈折メーター") {
+            console.log(value);
+            console.log(patternRegex.test(value));
           }
+
+          // Check if the search string is present in the current value
+          if (patternRegex.test(value)) {
+            return true;
+          }
+        }
       }
       // for (const key in jsonObject) {
       //   if (Object.prototype.hasOwnProperty.call(jsonObject, key)) {
@@ -128,4 +172,4 @@ document.addEventListener('DOMContentLoaded', function () {
       //   }
       // }
     }
-});
+);

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
                     const data = JSON.parse(xhr.responseText);
-
+                    
                     iterateJson(data);
 
                     // Update language switch button text
