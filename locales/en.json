@@ -13,7 +13,7 @@
   "about": "About",
   "1": {
     "title": "Digital Refractometer",
-    "keywords": "C, C++, Timers, Optics, Instrumentation, ATmega328, Photodiode, Low-power",
+    "keywords": "C, Timers, Optics, Instrumentation, ATmega328, Photodiode, Low-power",
     "shortdescription": "A Refractometer is a device that measures a fluid's refractive index, that is, how much the path of light is bent compared to vacuum within it. Used mainly in fluid products quality control. In this project, it's presented a low-cost digital version of this device."
   },
   "2": {
