@@ -18,18 +18,18 @@
   },
   "2": {
     "title": "UaiKey v2",
-    "keywords": "C++, IoT, ESP8266, RFID, Cryptography, LabVIEW, TCP/IP",
+    "keywords": "C++, IoT, ESP8266, RFID, Cryptography, LabVIEW, SPI, TCP/IP",
     "shortdescription": "UaiKey is a acess control system built with an embedded door lock and a desktop admin control panel that can access the embedded device remotely from anywhere with internet access. The communication between the devices and the transactions are secured."
   },
   "3": {
     "title": "MeuLab",
-    "keywords": "C++, FreeRTOS, ESP8266, WebSockets, Sensors, IoT, LabVIEW",
+    "keywords": "C++, ESP8266, WebSockets, Sensors, IoT, LabVIEW, Signal Processing",
     "shortdescription": "MeuLab is an embedded platform that accepts a wide variety of sensors. MeuLab can measure, plot, and analyze multiple physical quantites data simultaneously. It communicates via wireless with a desktop or mobile app that show the results."
   },
   "4": {
     "title": "Glass door",
     "keywords": "Iot, Automation, ESP8266, Electronics",
-    "shortdescription": "This project returns at my beggining in the embedded world at the second year of the covid pandemic. It is a modification of a residential building door lock. I made it unlockable throught the resident's smartphone since the only way to unlock the door was locally."
+    "shortdescription": "This project marks my entrance in embedded development, at the second year of the covid pandemic. It is a modification of a residential building door lock. I made it unlockable throught the resident's smartphone since the only way to unlock the door was locally."
   },
   "5": {
     "title": "Voltage Source",
@@ -81,18 +81,47 @@
   "imgdescription2": "The Uaikey's v2 remote desktop admin panel"
   },
 "/projects/meulab/index.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About",
   "name": "meulab",
-  "keywords": "C++, FreeRTOS, ESP32, WebSockets, Sensors, IoT, LabVIEW"
+  "keywords": "C++, ESP32, WebSockets, Sensors, IoT, LabVIEW, Signal Processing",
+  "title": "MeuLab &nbsp;<i class=\"fa-solid fa-flask-vial\"></i>",
+  "objective": "<b>Objective: </b>Build a low-cost embedded platform for any grade student to perform measures in laboratory lessons.  Acquired by schools and universities.",
+  "requirements": "<b>Requirements: </b><ol><li>The device should accept a wide variety of sensors for different physical phenomena;</li><li>The device must able to perform measures coming from different sensors at the same time;</li><li>The system must have both desktop and mobile app for the user to control the experiment and analyzing it;</li></ol>",
+  "role": "<b>Role: </b>Embedded Software",
+  "process": "<b>Development process: </b><br>These three are the top ones requirements that defines the system, but since I worked only in the integration of the force sensor, it's not worth mentioning them. So I just assembled the measuring circuit with a strain gauge and a HX711 amplifier and started to read it with an arduino. This amplifier do not communicate via I2C, rather it has its own protocol, but luckly it had a library. After that, turned this piece of code in a module and sent it to a more experciened programmer to include it as a task in the RTOS. This was my first project to work in EITA!, so I was still a newbie in embedded development, not that I am an experiencied programmer aswell.",
+  "imgdescription1": "A MeuLab embedded device protype with sensors for magnetic field, heartbeat, light, distance. All sensors are plugable on the embedded platform.",
+  "imgdescription2": "The force sensor with the HX711 green board with the straing gauge at the bottom.",
+  "imgdescription3": "The MeuLab mobile app for plotting data."
   },
 "/projects/glass-door/index.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About",
   "name": "glass-door",
-  "keywords": "Iot, Automation, ESP8266, Electronics"
+  "keywords": "IoT, Automation, ESP8266, Electronics",
+  "title": "Glass-door &nbsp;<i class=\"fa-solid fa-door-open\"></i>",
+  "objective": "<b>Objective: </b>Ease the reception of visitors for residents in a residential building.",
+  "requirements": "<b>Problem:</b><br>The problem was that the entrance of the building had 2 doors, one main gate that was unlockale via intercom and physical key, and other glass-door that was unlockabe only through physical key and a access control with digit password. If a resident receives a visitor, one has press the intercom button to open the first door then get out of their apartment and unlock the glass-door manually. As you can see it gets worse if the resident lives in higher floors, meaning that the resident need to travel more. So my idea was to make this second door unlockable via the resident's smartphone. In this way, they can stay inside their aparment.<br><b>Requirements: </b><ol><li>Make a common glass door be unlockable through the resident's smartphones.</li>",
+  "role": "<b>Role: </b>Electronics and firmware",
+  "process": "<b>Development process and requirement meeting: </b><br>Used my ESP12-E development board to give a signal that would act like a electronic switch to open the door. As showed in the circuit, I bypassed all the original acess control that was there already installed by using a power transistor with a flybackdiode that is connected direcly to the door magnet lock's common node. In this way, the circuit that I made wouldn't interfer the installed acess control functioality. Also got some +12V supply from this acess control system. To unlock via smartphone, I used the IoT cloud platform Blink. Then, the residents only need to download de Bink app and press one button in their smartphone to unlock the door. Initially I thought to make an http server inside the ESP8266, but for that it would need some IP port forwarding, a thing that the local ISPs here generally doesn't allow. That's why I choosed Blink.",
+  "problems": "<b>Problems and overcomes: </b><ul><li>I was trying to unlock the door with only one pulse on the digital pin that goes into the base of the transistor. That wouldn't work. But after hearing the installed acess control opening the door, I realized that was some sequential swtiching for about 1 second to open the magnetic door lock. After that, I tried to do the same in the digital pin by giving some pules about 10hz and it worked. At that time, I didn't know exaclty why this worked because never had studied faraday's law before.</li>",
+  "imgdescription1": "The installed acess control opened with the ESP12-E bypassing it on the left. The glass-door on the right.",
+  "imgdescription2": "The schematic for the circuit above. The acess control circuit is not shown.",
+  "imgdescription3": "A diagram showing the situation."
   },
 "/projects/voltage-source/index.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About",
   "name": "voltage-source",
   "keywords": "PCB, Electronics, Digital, Analog"
   },
 "/projects/microscopy-analogies/index.html": {
+  "home": "Home",
+  "projects": "Projects",
+  "about": "About",
   "name": "microscopy-analogies",
   "keywords": "C, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM"
 }, 
@@ -101,9 +130,9 @@
   "home": "Home",
   "projects": "Projects",
   "about": "About",
-  "text1": "Majoring Electrical Engineering with emphasis in microelectronics, I'm an undergrad student at Federal University of Minas Gerais (UFMG) highly interested in technology and science topics such as mixed-signal electronics, optics, nanotechnology, AI, and computer architecture.\nBesides the fun of learning these topics, my motivation comes from the pleasure of understading how things around us work, and with this understanding, contribute to the humanity's technological progress.",
+  "text1": "Majoring Electrical Engineering with emphasis in microelectronics, I'm an undergrad student at Federal University of Minas Gerais (UFMG) highly interested in technology and science topics such as mixed-signal electronics, optics, EVs, nanotechnology, AI, and computer architecture.\nBesides the fun of learning these topics, my motivation comes from the pleasure of understading how things around us work, and with this understanding, contribute to the humanity's technological progress.",
   "lab1description": "Analog and digital electronics teaching lab at UFMG",
-  "text2": "At the moment, aside of hobby projects, most of my experience in embedded comes from an technology learning space at my university called \"EITA!\". At this space I work with other undergrad students creating scientifc instrumentation (mainly) and physics demonstrations. Even though I think EITA! is a perfect enviroment for hands-on learning, I'm planning to do an internship by the year of 2024.\n The figures at this page shows some locations where I work/learn." ,
+  "text2": "At the moment, aside of hobby projects, most of my experience in embedded comes from an technology learning space at my university called \"EITA!\". At this space I work with other undergrad students creating scientifc instrumentation (mainly) and physics demonstrations. Even though I think EITA! is a perfect enviroment for hands-on learning, I'm planning to do an internship by the year of 2024.\n The figures at this page shows some locations where I learn." ,
   "lab2description": "Prototyping area at EITA!",
   "text3": "As for my skills, let's say you can have a deeper understanding seeing the \"Projects\" tab, but for summary purposes, I currently have knowledge in:",
   "lab3description": "Workshop area at EITA!",
