@@ -116,7 +116,16 @@
   "projects": "Projects",
   "about": "About",
   "name": "voltage-source",
-  "keywords": "PCB, Electronics, Digital, Analog"
+  "keywords": "PCB, Electronics, Digital, Analog",
+  "title": "Voltage Source &nbsp;<i class=\"fa-solid fa-bolt\"></i>",
+  "objective": "<b>Objective: </b><br>Build a DC Voltage Source power supply as a laboratory subject final project.",
+  "requirements": "<b>Requirements:</b><ol><li>It should be able to deliever voltage in the -15V to +15V range;</li><li>It should have a protection for overcurrent above 1A;</li><li>It should be powered itself from the 127Vrms consumer eletrical grid</li></ol>",
+  "role": "<b>Role:</b><br>Circuit design, PCB design and soldering.",
+  "process": "<b>Development process and requirement meeting: </b><br>In this project, I worked with a lab pair, so we were in the same role. Basically, we split up the work load for each step of the project. First, we started to design the circuit by calculating all the functional blocks as seen in theoretical classes. The third requiremente was easily achieved by using a rectifier citcuit. The voltage range requirement was achievied by using the potentiometers, some OpAmps stages, and transistor for a feedback loop. The overcurrent protection was achieved by using a shunt resistor, an OpAmp stage and a CD4013BE Dual D-Flip-Flop to switch a transistor to sink the power. After that, we draw the PCB, soldered and tested all the circit parts. These last two were the steps that most took time.",
+  "problems": "<b>Problems and overcomes: </b><ul><li>After designing the PCB, the computer that controls the CNC machine started to randomly rebooting. This failure cause to the CNC to loss the original (X,Y) reference in the machining process. That way, my board started get the routes messy and then the board turned out to be unusable. Because of that, we had to switch to an already done (with some project mistakes) emergency board. Then, had to look up for the schematic of this board and solder some different components, but managed to still use the components that we bought by doing some adaptations, for instance, this emergecy board used a zener to regulate a 2.1V supply, but we used our 3 1N4148 and soldered all in the same spot for ony one zener.</li>",
+  "imgdescription1": "The complete project schematic",
+  "imgdescription2": "The bottom layer of the PCB",
+  "imgdescription3": "Testing the output of the voltage source with a resistive load."
   },
 "/projects/microscopy-analogies/index.html": {
   "home": "Home",

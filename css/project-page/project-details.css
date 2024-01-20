@@ -1,5 +1,5 @@
 /* css/project-page/project-details.css */
-#story {display: flex;justify-content: space-evenly;padding-top: 20px;}
+#story {display: flex;justify-content: space-evenly;padding-top: 20px;align-content: flex-start;}
 /* Styles for displaying project details */
 #project-details h2 {
     font-size: 24px;
@@ -26,13 +26,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 1000px;
+    height: auto;
 }
 
 .block {
     background-color: rgb(221, 220, 219);
     border-radius: 7px;
     padding: 5px;
+    margin-top: 25px;
 }
 
 .pictures-div {
@@ -42,6 +43,7 @@
     border: black 1px solid;
     border-radius: 5px;
     padding: 10px;
+    height: auto;
 }
 ol, ul {
     list-style-position: inside;
@@ -50,8 +52,9 @@ ol, ul {
 /* Add more project details styles if needed */
 @media only screen and (max-width: 768px) {
     #story {flex-wrap: wrap;}
-    .project-text {height: 2000px; width: 95%;}
-    .project-description {height: 1500px; display:block;padding-top: 10px;}
+    .project-text {width: 95%}
+    .project-description {display:block;padding-top: 10px;}
     .title{font-size: 20px;}
-    .block{margin-top: 10px;}
+    .block{margin-top: 15px;}
+    .pictures-div{margin-top: 15px;}
 }

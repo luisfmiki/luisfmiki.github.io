@@ -98,7 +98,7 @@
 }
 .minibox {margin-left:5px;padding-right: 3px;}
 .expButton {width: 530px;position: relative;left: 50%;margin-left: -265px;margin-top:0;bottom:5px;}
-
+.seedetail {padding-left: 10px !important;padding-right: 10px !important;}
 
 .shown-content {display: flex; justify-content: space-between;}
 
@@ -111,11 +111,12 @@
         padding: unset;
         border: none;
     }
-    .projectblock {height:260px;}
-.projectblock.expanded {height: 495px;}
+    .projectblock {height:fit-content;}
+.projectblock.expanded {height: 460px;}
 .seedetailcontainer {margin-top:8px;}
 .expButton {width: 90%;left:5%;margin-left: 0;padding: none;}
 .thumb {flex-shrink: 1;}
+
 h2 {font-size: 20px;}
 }
 
