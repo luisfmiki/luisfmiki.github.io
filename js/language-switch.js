@@ -63,6 +63,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (page === "/") {
             page = "/index.html";
         }
+        else if (page === "/projects/" || page === "/projects") {
+            page = "/projects/index.html"
+        }
+        else if (page === "/about/" || page === "/about") {
+            page = "/about/index.html"
+        }
         for (const key in data[page]) {
             const element = document.getElementById(key);
             if (element) {

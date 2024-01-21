@@ -7,7 +7,7 @@
     "ido": "I develop and maintain embedded systems. That is, software/hardware that control consumer electronics, automotive, healthcare, defense equipments, and so on. ",
     "contact": "For more info, feel free to contact me at &nbsp;<a href=\"mailto:luisfmiki@gmail.com\">luisfmiki@gmail.com</a> &nbsp;<i class=\"fa-regular fa-envelope\"></i>"
   },
-"/projects/projects.html": {
+"/projects/index.html": {
   "home": "Home",
   "projects": "Projects",
   "about": "About",
@@ -135,7 +135,7 @@
   "keywords": "C, Control Engineering, Signal Processing, Scanning probe, SEM, STM, AFM"
 }, 
 
-"/about/about.html": {
+"/about/index.html": {
   "home": "Home",
   "projects": "Projects",
   "about": "About",

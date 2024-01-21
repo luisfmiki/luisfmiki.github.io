@@ -7,7 +7,7 @@
     "ido": "組み込みシステムの開発と保守を行っています。つまり、電化製品、自動車、医療、科学、防衛機器などを制御するソフトウェアやハードウェアです。",
     "contact": "詳細については、<a href=\"mailto:luisfmiki@gmail.com\">luisfmiki@gmail.com</a> &nbsp;までお気軽にお問い合わせください <i class=\"fa-regular fa-envelope\"></i>"
   },
-  "/projects/projects.html": {
+  "/projects/index.html": {
     "home": "ホーム",
     "projects": "プロジェクト",
     "about": "自己紹介",
@@ -131,7 +131,7 @@
     "name": "顕微鏡のアナロジー",
     "keywords": "C、制御工学、信号処理、走査プローブ、SEM、STM、AFM"
   }, 
-  "/about/about.html": {
+  "/about/index.html": {
     "home": "ホーム",
     "projects": "プロジェクト",
     "about": "自己紹介",
