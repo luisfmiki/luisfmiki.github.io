@@ -60,14 +60,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function iterateJson(data) {
         let page = window.location.pathname;
-        if (page === "/") {
-            page = "/index.html";
-        }
-        else if (page === "/projects/" || page === "/projects") {
-            page = "/projects/index.html"
-        }
-        else if (page === "/about/" || page === "/about") {
-            page = "/about/index.html"
+        // if (page === "/") {
+        //     page = "/index.html";
+        // }
+        // else if (page === "/projects/" || page === "/projects") {
+        //     page = "/projects/index.html"
+        // }
+        // else if (page === "/about/" || page === "/about") {
+        //     page = "/about/index.html"
+        // }
+        if (!page.includes("index.html")) {
+            page = page + "index.html";
         }
         for (const key in data[page]) {
             const element = document.getElementById(key);
