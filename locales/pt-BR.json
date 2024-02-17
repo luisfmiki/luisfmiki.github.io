@@ -1,0 +1,150 @@
+{
+    "/index.html": {
+    "home": "Início",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "hello": "Olá! ^_^<br>Eu sou Luís Fernando,<br>Desenvolvedor de Embarcados",
+    "ido": "Eu desenvolvo e mantenho sistemas embarcados. Ou seja, software/hardware que controla equipamentos eletrônicos de consumo, automotivos, de saúde, de defesa, e assim por diante.",
+    "contact": "Para mais informações, sinta-se à vontade para entrar em contato comigo em &nbsp;<a href=\"mailto:luisfmiki@gmail.com\">luisfmiki@gmail.com</a> &nbsp;<i class=\"fa-regular fa-envelope\"></i>"
+    },
+    "/projects/index.html": {
+        "home": "Início",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "1": {
+            "title": "Refratômetro Digital",
+            "keywords": "C, Timers, Óptica, Instrumentação, ATmega328, Fotodiodo, Baixo consumo",
+            "shortdescription": "Um refratômetro é um dispositivo que mede o índice de refração de um fluido, ou seja, quanto o caminho da luz é curvado em relação ao vácuo dentro dele. Usado principalmente no controle de qualidade de produtos líquidos. Neste projeto, é apresentada uma versão digital de baixo custo deste dispositivo."
+        },
+        "2": {
+            "title": "UaiKey v2",
+            "keywords": "C++, IoT, ESP8266, RFID, Criptografia, LabVIEW, SPI, TCP/IP",
+            "shortdescription": "UaiKey é um sistema de controle de acesso construído com uma fechadura de porta embarcada e um painel de controle administrativo desktop que pode acessar o dispositivo embarcado remotamente de qualquer lugar com acesso à internet. A comunicação entre os dispositivos e as transações são seguras."
+        },
+        "3": {
+            "title": "MeuLab",
+            "keywords": "C++, ESP8266, WebSockets, Sensores, IoT, LabVIEW, Processamento de Sinais",
+            "shortdescription": "MeuLab é uma plataforma embarcada que aceita uma ampla variedade de sensores. MeuLab pode medir, plotar e analisar dados de múltiplas grandezas físicas simultaneamente. Ele se comunica via wireless com um aplicativo desktop ou móvel que exibe os resultados."
+        },
+        "4": {
+            "title": "Porta de Vidro",
+            "keywords": "IoT, Automação, ESP8266, Eletrônica",
+            "shortdescription": "Este projeto marca minha entrada no desenvolvimento de embarcados, no segundo ano da pandemia de covid. É uma modificação de uma fechadura de porta de prédio residencial. Eu a tornei desbloqueável através do smartphone do morador, já que a única maneira de desbloquear a porta era localmente."
+        },
+        "5": {
+            "title": "Fonte de Tensão",
+            "keywords": "PCB, Eletrônica, Digital, Analógico",
+            "shortdescription": "Projeto de graduação do Laboratório de Circuitos Eletrônicos I. Alimentado pela rede elétrica local, é apresentada uma fonte de tensão que varia de -15V a +15V com proteção digital contra sobrecorrente."
+        },
+        "6": {
+            "title": "Analogias de Microscopia",
+            "keywords": "C, Engenharia de Controle, Processamento de Sinais, Varredura, SEM, STM, AFM",
+            "shortdescription": "Projeto em desenvolvimento"
+        },
+        "keyword": "Palavras-chave: ",
+        "type": "Tipo: ",
+        "science": "Científico ",
+        "tech": "Tecnológico ",
+        "hobby": "Hobby ",
+        "school": "Acadêmico ",
+        "seedetail": "Ver detalhes do projeto <i class=\"fa-solid fa-circle-info\"></i>"
+    },
+    "/projects/digital-refractometer/index.html": {
+        "home": "Início",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "name": "refratômetro-digital",
+        "keywords": "C, Timers, PWM, Óptica, Instrumentação, ATmega328, Fotodiodo, Baixo consumo",
+        "title": "Refratômetro Digital &nbsp; <i class=\"fa-solid fa-camera\"></i>",
+        "objective": "<b>Objetivo: </b>Construir um refratômetro digital de baixo custo e preciso para ser utilizado como coletor de dados em um processo de automação que caracteriza amostras biológicas humanas.",
+        "requirements": "<b>Requisitos: </b><ol><li>O dispositivo deve medir o índice de refração da amostra e a temperatura ambiente;</li> <li>Pelo menos três diferentes comprimentos de onda de luz devem estar disponíveis para escolha;</li><li>O dispositivo deve fornecer um relatório das medidas por meio de um arquivo .csv, mas também mostrar a medida atual por meio de um display;</li></ol>",
+        "role": "<b>Papel: </b>Eletrônica e firmware",
+        "process": "<b>Processo de desenvolvimento e atendimento aos requisitos: </b><br><b>Requisito #1</b><br> Primeiramente, fiz a modelagem da óptica do problema usando o GeoGebra para obter a posição dos componentes ópticos. Depois disso, comecei a programar um sensor de CCD linear IC para obter o valor da intensidade da luz. Para essa tarefa, utilizei os 3/3 temporizadores do ATmega328p para gerar PWM para atender as formas de onda de sinal conforme instruído na folha de dados do IC (se mais temporizadores fossem necessários, então escolheria outro microcontrolador), também usei dois pinos ADC para ler o sinal de intensidade de luz e temperatura por meio de um termistor NTC. Com a intensidade da luz versus posição, usei o modelo geométrico da óptica e a lei de Snell para alcançar o índice de refração.<br><b>Requisito #2</b><br>Fiz uma PCB com 3 LEDs SMD com cores diferentes como componente óptico mencionado acima. Apenas uma cor (comprimento de onda) está ligada de cada vez. Assim, programei isso com um botão de pressão que alterna a cor.<br><b>Requisito #3</b><br>Usei o LabVIEW para programar uma interface de desktop simples para exportar os dados através de um cabo USB que se conecta ao dispositivo. Os dados são armazenados na memória flash do microcontrolador, já que o usuário pode optar por coletá-los após um longo conjunto de medidas. Para exibir os resultados, usei a biblioteca OLED SSD1306 da Adafruit, mas tive que contornar a biblioteca da Adafruit para fins de baixo consumo de energia. Falando em baixo consumo de energia, também programei o Arduino para dormir após algum tempo sem comandos/tarefas. Então, tive que programar um botão de ligar/desligar (dormir/despertar) por meio de uma interrupção externa e algum código assembly para garantir uma ordem específica de instruções.",
+        "problems": "<b>Problemas e soluções: </b><ul><li>Por algum motivo, o sinal analógico do CDD era bastante aleatório. Mesmo certificando-se de que os sinais digitais estavam exatamente como as instruções da folha de dados do IC, lutei por algum tempo até perceber que o sinal era muito parecido com um pino flutuante. Então, tentei colocar um resistor de pull-down entre o pino ADC e o pino analógico do IC. Finalmente, o valor analógico ficou coerente, no entanto, este resistor não foi mencionado em nenhum lugar nas instruções de uso da folha de dados do IC.</li></ul>",
+        "imgdescription1": "Um protótipo de Refratômetro Digital feito em <a href=\"https://eitaufmg.wixsite.com/eita\">EITA!</a>",
+        "imgdescription2": "TSL1401CL, o Sensor de CCD Linear Integrado utilizado",
+        "imgdescription3": "O modelo de óptica dos raios de luz com um prisma de acrílico programado no Geogebra"
+    },
+    "/projects/uaikey/index.html": {
+        "home": "Início",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "name": "uaikey",
+        "keywords": "C++, IoT, ESP8266, RFID, Criptografia, LabVIEW, TCP/IP, SPI",
+        "title": "Uaikey v2 &nbsp;<i class=\"fa-solid fa-building-lock\"></i>",
+        "objective": "<b>Objetivo: </b>Considerando que a perda de chaves estava se tornando um problema no departamento de física, surgiu a necessidade de construir um sistema de controle de acesso de baixo custo para os laboratórios.",
+        "requirements": "<b>Requisitos: </b><ol><li>O controle de acesso utilizará os cartões de identificação da universidade;</li><li>Um aplicativo desktop para o administrador do laboratório;</li><li>Comunicação sem fio entre os dispositivos de todo o sistema;</li></ol>",
+        "role": "<b>Papel: </b>Software embarcado e desktop",
+        "process": "<b>Processo de desenvolvimento e atendimento aos requisitos: </b><br>Como trabalhei na segunda versão do sistema, todos os requisitos já estavam basicamente atendidos, mas o programador original não estava disponível. Então, o que fiz principalmente foi engenharia reversa, refatoração e otimização do código embarcado. Por exemplo, o algoritmo de criptografia estava usando apenas o primeiro byte das chaves de N bytes em todas as mensagens de comunicação 😱, estava uma bagunça, então decidi reconstruir o código de criptografia do zero. Não o culpo, me disseram que ele codificou este sistema logo após aprender C++. Além disso, todo o aplicativo desktop estava em cima da biblioteca C++ Qt, mas decidimos refazê-lo usando LabVIEW, já que é uma linguagem bastante usada no EITA!. Além disso, também adicionei algumas novas funcionalidades e planejo implementar uma máquina de estados no código embarcado para exibir o número de pessoas dentro da sala a ser usado na sala limpa do departamento de física.<br>Como este projeto não é pequeno, encorajo você a me contatar diretamente para qualquer dúvida sobre coisas como hardware usado e aspectos técnicos. Uma página mais detalhada desta primeira versão do projeto pode ser encontrada <a href=\"https://eitaufmg.wixsite.com/eita/uaikey\">aqui</a> (em português)",
+        "problems": "<b>Problemas e soluções: </b><ul><li>Houve um problema crítico onde, se o dispositivo embarcado parasse de responder no meio das transações de comunicação devido a coisas como desligamentos de energia ou bugs imprevistos na sequência de código (arquitetura de super-loop embarcada), isso poderia levar a vazamentos de memória graves e dessincronização de dados entre o dispositivo embarcado e o dispositivo de controle remoto. O que fiz foi um 'pseudo-protocolo' em cima do TCP para lidar com esse tipo de falha na conexão de comunicação.</li></ul>",
+        "imgdescription1": "O dispositivo embarcado Uaikey v2 para ler os cartões de acesso",
+        "imgdescription2": "O painel de administração remota do Uaikey v2"
+    },
+    "/projects/meulab/index.html": {
+        "home": "Início",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "name": "meulab",
+        "keywords": "C++, ESP32, WebSockets, Sensores, IoT, LabVIEW, Processamento de Sinais",
+        "title": "MeuLab &nbsp;<i class=\"fa-solid fa-flask-vial\"></i>",
+        "objective": "<b>Objetivo: </b>Construir uma plataforma embarcada de baixo custo para que qualquer aluno possa realizar medidas em aulas de laboratório. Adquirido por escolas e universidades.",
+        "requirements": "<b>Requisitos: </b><ol><li>O dispositivo deve aceitar uma ampla variedade de sensores para diferentes fenômenos físicos;</li><li>O dispositivo deve ser capaz de realizar medidas de diferentes sensores ao mesmo tempo;</li><li>O sistema deve ter tanto um aplicativo de desktop quanto um aplicativo móvel para que o usuário controle o experimento e o analise;</li></ol>",
+        "role": "<b>Papel: </b>Software Embarcado",
+        "process": "<b>Processo de desenvolvimento: </b><br>Esses três são os principais requisitos que definem o sistema, mas como trabalhei apenas na integração do sensor de força, não vale a pena mencioná-los. Então, apenas montei o circuito de medição com uma célula de carga e um amplificador HX711 e comecei a lê-lo com um Arduino. Este amplificador não se comunica via I2C, ele possui seu próprio protocolo, mas felizmente tinha uma biblioteca. Depois disso, transformei este trecho de código em um módulo e o enviei para um programador mais experiente incluí-lo como uma tarefa no RTOS. Este foi meu primeiro projeto para trabalhar no EITA!, então eu ainda era um novato em desenvolvimento embarcado, não que eu seja um programador experiente também.",
+        "imgdescription1": "Um protótipo de dispositivo embarcado MeuLab com sensores para campo magnético, batimentos cardíacos, luz, distância. Todos os sensores são plugáveis na plataforma embarcada.",
+        "imgdescription2": "O sensor de força com a placa verde HX711 com a célula de carga na parte inferior.",
+        "imgdescription3": "O aplicativo móvel MeuLab para plotagem de dados."
+      },
+      "/projects/glass-door/index.html": {
+        "home": "Início",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "name": "glass-door",
+        "keywords": "IoT, Automação, ESP8266, Eletrônica",
+        "title": "Porta de Vidro &nbsp;<i class=\"fa-solid fa-door-open\"></i>",
+        "objective": "<b>Objetivo: </b>Facilitar a recepção de visitantes para os moradores em um prédio residencial.",
+        "requirements": "<b>Problema:</b><br>O problema era que a entrada do prédio tinha 2 portas, um portão principal que podia ser desbloqueado via interfone e chave física, e outra porta de vidro que só podia ser desbloqueada através de chave física e um controle de acesso com senha numérica. Se um morador recebesse um visitante, ele teria que apertar o botão do interfone para abrir a primeira porta e depois sair do seu apartamento para desbloquear a porta de vidro manualmente. Como você pode ver, isso piora se o morador morar em andares mais altos, o que significa que o morador precisa viajar mais. Então, minha ideia foi tornar esta segunda porta desbloqueável através do smartphone do morador. Dessa forma, eles podem permanecer dentro de seu apartamento.<br><b>Requisitos: </b><ol><li>Tornar uma porta de vidro comum desbloqueável através dos smartphones dos moradores.</li>",
+        "role": "<b>Papel: </b>Eletrônica e firmware",
+        "process": "<b>Processo de desenvolvimento e reunião de requisitos: </b><br>Usei minha placa de desenvolvimento ESP12-E para enviar um sinal que agiria como um interruptor eletrônico para abrir a porta. Como mostrado no circuito, eu contornei todo o controle de acesso original que já estava instalado usando um transistor de potência com um diodo de retorno conectado diretamente ao nó comum da trava magnética da porta. Dessa forma, o circuito que fiz não interferiria na funcionalidade do controle de acesso instalado. Também obtive uma alimentação de +12V a partir deste sistema de controle de acesso. Para desbloquear via smartphone, usei a plataforma de nuvem IoT Blink. Então, os moradores só precisam baixar o aplicativo Blink e pressionar um botão em seus smartphones para desbloquear a porta. Inicialmente, pensei em fazer um servidor http dentro do ESP8266, mas para isso seria necessário algum redirecionamento de porta IP, algo que os ISPs locais geralmente não permitem aqui. Por isso, escolhi o Blink.",
+        "problems": "<b>Problemas e soluções: </b><ul><li>Eu estava tentando desbloquear a porta com apenas um pulso no pino digital que vai para a base do transistor. Isso não funcionaria. Mas depois de ouvir o controle de acesso instalado abrindo a porta, percebi que havia uma comutação sequencial por cerca de 1 segundo para abrir a trava magnética da porta. Depois disso, tentei fazer o mesmo no pino digital dando alguns pulsos cerca de 10hz e funcionou. Naquela época, eu não sabia exatamente por que isso funcionava porque nunca tinha estudado a lei de Faraday antes.</li>",
+        "imgdescription1": "O controle de acesso instalado foi aberto com o ESP12-E contornando-o à esquerda. A porta de vidro à direita.",
+        "imgdescription2": "O esquemático para o circuito acima. O circuito de controle de acesso não está mostrado.",
+        "imgdescription3": "Um diagrama mostrando a situação."
+      },
+      "/projects/voltage-source/index.html": {
+        "home": "Início",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "name": "voltage-source",
+        "keywords": "PCB, Eletrônica, Digital, Analógico",
+        "title": "Fonte de Tensão &nbsp;<i class=\"fa-solid fa-bolt\"></i>",
+        "objective": "<b>Objetivo: </b><br>Construir uma fonte de alimentação de tensão contínua como projeto final de laboratório.",
+        "requirements": "<b>Requisitos:</b><ol><li>Deve ser capaz de fornecer tensão na faixa de -15V a +15V;</li><li>Deve ter proteção para sobrecorrente acima de 1A;</li><li>Deve ser alimentado pela própria rede elétrica do consumidor de 127Vrms</li></ol>",
+        "role": "<b>Papel:</b><br>Projeto de circuito, projeto de PCB e soldagem.",
+        "process": "<b>Processo de desenvolvimento e atendimento aos requisitos: </b><br>Neste projeto, trabalhei com um colega de laboratório, então estávamos no mesmo papel. Basicamente, dividimos a carga de trabalho para cada etapa do projeto. Primeiro, começamos a projetar o circuito calculando todos os blocos funcionais conforme visto em aulas teóricas. O terceiro requisito foi facilmente alcançado usando um circuito retificador. O requisito de faixa de tensão foi alcançado usando os potenciômetros, alguns estágios de OpAmps e um transistor para um loop de feedback. A proteção contra sobrecorrente foi alcançada usando um resistor shunt, um estágio de OpAmp e um CD4013BE Dual D-Flip-Flop para alternar um transistor para drenar a energia. Depois disso, desenhamos o PCB, soldamos e testamos todas as partes do circuito. Essas duas últimas etapas foram as que mais demoraram.",
+        "problems": "<b>Problemas e soluções: </b><ul><li>Após projetar o PCB, o computador que controla a máquina CNC começou a reiniciar aleatoriamente. Essa falha fez com que o CNC perdesse a referência original (X, Y) no processo de usinagem. Dessa forma, minha placa começou a ficar com as rotas bagunçadas e depois a placa acabou ficando inutilizável. Por causa disso, tivemos que mudar para uma placa de emergência já feita (com alguns erros de projeto). Em seguida, tivemos que procurar o esquema dessa placa e soldar alguns componentes diferentes, mas conseguimos ainda usar os componentes que compramos fazendo algumas adaptações, por exemplo, essa placa de emergência usava um zener para regular uma fonte de 2,1V, mas usamos nossos 3 1N4148 e soldamos todos no mesmo local para apenas um zener.</li>",
+        "imgdescription1": "O esquema completo do projeto",
+        "imgdescription2": "A camada inferior do PCB",
+        "imgdescription3": "Testando a saída da fonte de tensão com uma carga resistiva."
+      },
+      "/about/index.html": {
+        "home": "Início",
+        "projects": "Projetos",
+        "about": "Sobre",
+        "text1": "Estudante de Engenharia Elétrica com ênfase em microeletrônica, sou graduando na Universidade Federal de Minas Gerais (UFMG) e tenho grande interesse em tecnologia e ciência, tais como eletrônica de sinal misto, óptica, veículos elétricos, nanotecnologia, IA e arquitetura de computadores.\nAlém da diversão em aprender sobre esses tópicos, minha motivação vem do prazer em entender como as coisas ao nosso redor funcionam e, com esse entendimento, contribuir para o progresso tecnológico da humanidade.",
+        "lab1description": "Laboratório de ensino de eletrônica analógica e digital na UFMG",
+        "text2": "No momento, além de projetos de hobby, a maior parte da minha experiência em sistemas embarcados vem de um espaço de aprendizado de tecnologia na minha universidade chamado \"EITA!\". Nesse espaço, trabalho com outros estudantes de graduação na criação de instrumentação científica (principalmente) e demonstrações de física. Embora eu considere o EITA! um ambiente perfeito para aprendizado prático, estou planejando começar estágio curricular no ano de 2024.\n As figuras nesta página mostram alguns locais onde aprendo.",
+        "lab2description": "Área de prototipagem no EITA!",
+        "text3": "Quanto às minhas habilidades, digamos que você pode ter uma compreensão mais profunda consultando a aba \"Projetos\", mas para fins de resumo, atualmente possuo conhecimentos em:",
+        "lab3description": "Área de oficina no EITA!",
+        "proglang": "Linguagens de programação: ",
+        "tools": "Ferramentas: ",
+        "ll-hw": "Baixo Nível/Hardware: "
+      }
+      
+      
+      
+      
+      
+    
+}

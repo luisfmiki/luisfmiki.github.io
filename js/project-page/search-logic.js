@@ -9,10 +9,13 @@ const willAppear = {"digital-refractometer": true, "uaikey": true, "meulab": tru
 
 
 function writePlaceholder() {
-  if (document.documentElement.lang === 'en') {
+  const doclang = document.documentElement.lang
+  if (doclang === 'en') {
     document.getElementsByName('searchInput')[0].placeholder = "Search acronyms, techonolgies...";
-  } else {
+  } else if (doclang == 'jp') {
     document.getElementsByName('searchInput')[0].placeholder = "ワード、テクノロジーなどを検索";
+  } else {
+    document.getElementsByName('searchInput')[0].placeholder = "Pesquisar siglas, tecnologias...";
   }
 }
 
@@ -85,6 +88,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
           xhrjp.open('GET', `../../locales/jp.json`, true);
           xhrjp.send();
+      }
+
+      if (document.documentElement.lang === "pt-BR") {
+        
+        const xhrpt = new XMLHttpRequest();
+        xhrpt.onreadystatechange = function () {
+            if (xhrpt.readyState === XMLHttpRequest.DONE) {
+                if (xhrpt.status === 200) {
+                  const data = JSON.parse(xhrpt.responseText);
+                  for(const project in willAppear) {
+                    const key = "/projects/".concat(project, "/index.html");
+                    if (findStringInObject(searchTerm, data[key])) {
+                      willAppear[project] = true;
+                    } else {
+                      willAppear[project] = false;
+                    }
+                  }
+                  
+                } else {
+                    console.error('Error fetching JSON. Status:', xhrpt.status);
+                }
+            }
+            searchableElements.forEach(function (element) {
+              const hastoAppear = willAppear[element.id];
+      
+              // Check if the search term is empty or the element's text content contains the search term
+              if (searchTerm === '' || hastoAppear) {
+                // Display the element
+                element.style.display = 'block';
+              } else {
+                // Hide the element
+                element.style.display = 'none';
+              }
+            });
+        };
+
+          xhrpt.open('GET', `../../locales/pt-BR.json`, true);
+          xhrpt.send();
       }
       
       const xhren = new XMLHttpRequest();

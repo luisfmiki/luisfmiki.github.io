@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     
                     iterateJson(data);
 
-                    // Update language switch button text
-                    updateLanguageButtonText(lang);
 
                     // Save the language preference to localStorage
                     localStorage.setItem('currentLang', lang);
@@ -27,36 +25,28 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.send();
     }
 
-    // Function to update language switch button text
-    function updateLanguageButtonText(lang) {
-        const langSwitchBtn = document.getElementById('lang-switch-btn');
 
-        // Check if the button element exists
-        if (langSwitchBtn) {
-            // Set button text based on the language state
-            langSwitchBtn.innerText = lang === 'en' ? '日本語 🇯🇵' : 'English 🇺🇸';
-        } else {
-            console.error('Error: Language switch button not found. Check your HTML structure.');
+    const langBtns = document.getElementsByClassName('langButton');
+
+    if (langBtns) {
+        //console.log(langBtns);
+        for(let i=0;i<3;i++) {
+            langBtns[i].addEventListener('click', function () {
+                // Toggle between English and Japanese
+                //console.log(langBtns[i].id);
+    
+                // Set the new language
+                document.documentElement.lang = langBtns[i].id;
+    
+                // Load content for the new language
+                setLanguage(langBtns[i].id);
+            });
         }
-    }
-
-    // Event listener for language switch button
-    const langSwitchBtn = document.getElementById('lang-switch-btn');
-    if (langSwitchBtn) {
-        langSwitchBtn.addEventListener('click', function () {
-            // Toggle between English and Japanese
-            const currentLang = localStorage.getItem('currentLang') || 'en';
-            const newLang = currentLang === 'en' ? 'jp' : 'en';
-
-            // Set the new language
-            document.documentElement.lang = newLang;
-
-            // Load content for the new language
-            setLanguage(newLang);
-        });
     } else {
-        console.error('Error: Language switch button not found. Check your HTML structure.');
+        console.log("error")
     }
+
+
 
     function iterateJson(data) {
         let page = window.location.pathname;

@@ -12,17 +12,19 @@ button {
 
 /* Add more button styles if needed */
 
-#lang-switch-btn {
+.langButton {
     color: #fff;
     padding: 4px 12px;
     border: none;
     cursor: pointer;
     border-radius: 20px; /* Add rounded borders */
     transition: background-color 0.3s ease; /* Add a smooth transition */
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Change background color on mouse hover */
-#lang-switch-btn:hover {
+.langButton:hover {
     background-color: #ffffff;
     color:#2c60b5;
 }
